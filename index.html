@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Costo-Beneficio-Riesgo (ACBR)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Análisis Costo-Beneficio-Riesgo para Proyectos de Seguridad</h1>
+        <p>Introduce los datos del proyecto para evaluar su viabilidad económica.</p>
+
+        <div class="form-container">
+            <div class="form-column">
+                <h2>1. Inversión y Parámetros del Proyecto</h2>
+                <label for="capex">Inversión Inicial (CAPEX) ($):</label>
+                <input type="number" id="capex" value="1200000">
+
+                <label for="opex">Costos Operativos Anuales (OPEX) ($):</label>
+                <input type="number" id="opex" value="50000">
+
+                <label for="vidaUtil">Vida Útil del Proyecto (años):</label>
+                <input type="number" id="vidaUtil" value="15">
+                
+                <label for="valorRescate">Valor de Rescate al Final ($):</label>
+                <input type="number" id="valorRescate" value="0">
+            </div>
+
+            <div class="form-column">
+                <h2>2. Beneficios y Parámetros Financieros</h2>
+                <label for="beneficioAnual">Beneficio Anual (ΔALE) ($):</label>
+                <input type="number" id="beneficioAnual" value="9500">
+
+                <label for="tasaDescuento">Tasa de Descuento (WACC) (%):</label>
+                <input type="number" id="tasaDescuento" value="10">
+
+                <label for="tasaImpuesto">Tasa de Impuestos (%):</label>
+                <input type="number" id="tasaImpuesto" value="30">
+            </div>
+        </div>
+
+        <button onclick="realizarAnalisis()">Calcular Viabilidad</button>
+
+        <div id="resultados" class="hidden">
+            <h2>Resultados del Análisis</h2>
+            <div class="resultados-grid">
+                <div id="resultado-vpn" class="resultado-box"></div>
+                <div id="resultado-tir" class="resultado-box"></div>
+                <div id="resultado-payback" class="resultado-box"></div>
+            </div>
+
+            <h2>Análisis de Sensibilidad del VPN</h2>
+            <p>Muestra cómo cambia el VPN al variar +/- 20% las variables clave.</p>
+            <div id="sensibilidad-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
